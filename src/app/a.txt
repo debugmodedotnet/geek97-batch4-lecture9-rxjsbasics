@@ -1,0 +1,102 @@
+
+
+
+Foo = {
+    count = 9; 
+}
+
+let a = Foo.Count; 
+print a; // 9 
+
+let b = Foo.count ; 
+
+print b // 9 
+
+
+Foo.count = 99; // source has been changed 
+
+ a = Foo.Count; 
+
+print a // 99
+
+print b // 9 
+
+a = Foo.Count; 
+print a // 99 
+a = Foo.Count;
+print a // 99 
+
+
+
+Foo$ = {
+    count = 9; 
+}
+
+let a = Foo.count.sunscribe; 
+print a // 9 
+
+Foo.Count == 99; 
+
+print a // 
+
+
+
+Pull approach 
+
+function() --------------- you pull one result from a function 
+generators() --------------> you pull multiple result from the function  [part of javascript]
+
+Push approach {Reactive Programming}
+
+Special type 
+
+Promise    -----------------> that pushes only one result or error [ part of JavaScript]
+Observable   -----------------> that pushes multiple valid next data result or error [ it is part of RxJS]
+
+An Observable can return you three types of notification 
+
+1. next valid data 
+2. error 
+3. complete 
+
+
+all the consumers who ever going to work with that observable source 
+they should have three callback function 
+
+one cbf ------ next 
+one cbf ------error 
+once cbf ----- complete 
+
+These callback function are partial in nature. 
+
+Observable is unicasted 
+
+every consumer of an observable is going to have their own copy of executer or subscriber function 
+
+
+Subject - multicasted 
+
+There are five  types of subjects 
+
+1. Subject 
+2. BehaviourSubject 
+3. ReplaySubject 
+4. AsyncSubject 
+5. AnonymousSubject 
+
+
+
+observable , subject , replay subject, async subject, behavior subject
+
+observer 
+
+Subscription - unsubscrive, remove 
+
+operators 
+
+they are functions. 
+
+they take one input and give u output 
+
+they create new observables 
+
